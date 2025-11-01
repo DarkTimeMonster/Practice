@@ -1,11 +1,67 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Service.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\dawis\\source\\repos\\DAL\\DAL.csproj",
+      "msbuildProject": "C:\\Users\\dawis\\source\\repos\\DAL\\DAL.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\dawis\\source\\repos\\Domain\\Domain.csproj",
+      "msbuildProject": "C:\\Users\\dawis\\source\\repos\\Domain\\Domain.csproj"
+    },
+    "Service/1.0.0": {
+      "type": "project",
+      "path": "C:\\Users\\dawis\\source\\repos\\Service\\Service.csproj",
+      "msbuildProject": "C:\\Users\\dawis\\source\\repos\\Service\\Service.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Domain >= 1.0.0",
+      "Service >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\dawis\\.nuget\\packages\\": {},
@@ -38,7 +94,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\dawis\\source\\repos\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\dawis\\source\\repos\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\dawis\\source\\repos\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\dawis\\source\\repos\\Service\\Service.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
