@@ -7,4 +7,3 @@ namespace DaviskibaMaksim.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
-//ff
