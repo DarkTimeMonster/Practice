@@ -1,32 +1,51 @@
-using System.Diagnostics;
-using DaviskibaMaksim.Models;
 using Microsoft.AspNetCore.Mvc;
+using Domain;
 
 namespace DaviskibaMaksim.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public IActionResult Index() => View();
 
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult SiteInformation() => View();
+
+        [HttpPost]
+        public IActionResult Contact(ContactDto dto)
         {
-            _logger = logger;
+            // TODO: сохранить/отправить сообщение через Service/DAL
+            // Пока: показать сообщение благодарности
+            TempData["MessageSent"] = "Спасибо! Мы получили ваше сообщение.";
+            return RedirectToAction(nameof(SiteInformation));
         }
 
-        public IActionResult Index()
+        [HttpPost]
+        public IActionResult Login(LoginDto dto)
         {
-            return View();
+            // TODO: аутентификация через Service
+            TempData["Auth"] = "Вход (тестовый) выполнен.";
+            return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Register(RegisterDto dto)
         {
-            return View();
+            // TODO: регистрация через Service
+            TempData["Auth"] = "Регистрация (тестовая) выполнена.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult SendMessage(ContactDto dto)
+        {
+            // TODO: логика отправки письма
+            TempData["MessageSent"] = "Спасибо! Сообщение отправлено.";
+            return RedirectToAction(nameof(SiteInformation));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel { RequestId = System.Diagnostics.Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

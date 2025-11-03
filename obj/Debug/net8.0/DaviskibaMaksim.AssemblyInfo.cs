@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DaviskibaMaksim")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d08dd73bf69c03f83dd4340f0cd22caa822af6e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+078dec6755334b89f8dcb0a88c6859d53bc52585")]
 [assembly: System.Reflection.AssemblyProductAttribute("DaviskibaMaksim")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DaviskibaMaksim")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

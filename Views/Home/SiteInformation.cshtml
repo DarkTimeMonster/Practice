@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "О нас";
+}
+
+<section class="about-section">
+    <h1>О нас</h1>
+    <p>
+        Добро пожаловать в «Каталог гастрономических фестивалей» — ваш путеводитель по лучшим событиям еды и напитков.
+        Мы собираем информацию о фестивалях, рассказываем о локациях, программе и участниках, чтобы вы могли легко найти
+        мероприятие по вкусу.
+    </p>
+    <p>Наша миссия — продвигать культуру еды и помогать локальным организаторам становиться заметнее.</p>
+</section>
+
+<section class="services-section">
+    <div class="services-header">
+        <h2>Наши услуги</h2>
+        <p>Информация, подбор и поддержка организаторов фестивалей</p>
+    </div>
+
+    <div class="services-wrapper">
+        <div class="arrow left">&larr;</div>
+        <div class="services-carousel">
+            <!-- 6 карточек -->
+            <div class="service-card">
+                <img src="~/images/service1.jpg" alt="service">
+                <h5>Подбор фестивалей</h5>
+                <p>Индивидуальные подборки по темам и регионам.</p>
+            </div>
+            <div class="service-card">
+                <img src="~/images/service2.jpg" alt="service">
+                <h5>Рекомендации</h5>
+                <p>Советы по планированию визита — места, билеты и расписание.</p>
+            </div>
+            <div class="service-card">
+                <img src="~/images/service3.jpg" alt="service">
+                <h5>Анонсы</h5>
+                <p>Самые свежие анонсы и скидки для подписчиков.</p>
+            </div>
+            <div class="service-card">
+                <img src="~/images/service4.jpg" alt="service">
+                <h5>Онлайн-мероприятия</h5>
+                <p>Виртуальные мастер-классы и стримы с фестивалей.</p>
+            </div>
+            <div class="service-card">
+                <img src="~/images/service5.jpg" alt="service">
+                <h5>Поддержка организаторов</h5>
+                <p>Инструменты для промо и продаж билетов.</p>
+            </div>
+            <div class="service-card">
+                <img src="~/images/service6.jpg" alt="service">
+                <h5>Партнёрство</h5>
+                <p>Возможности сотрудничества и спонсорства.</p>
+            </div>
+        </div>
+        <div class="arrow right">&rarr;</div>
+    </div>
+</section>
+
+<section id="contacts" class="contacts-section">
+    <div class="contact-info">
+        <h4>Контакты</h4>
+        <p>Email: info@gastrofest.example</p>
+        <p>Телефон: +373 00 000 000</p>
+        <div class="contact-form">
+            <form asp-controller="Home" asp-action="Contact" method="post">
+                <input name="Name" placeholder="Ваше имя" required />
+                <input name="Email" placeholder="Email" type="email" required />
+                <textarea name="Message" placeholder="Сообщение" rows="5" required></textarea>
+                <button class="btn btn-primary" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <!-- Вставьте код карты Яндекс сюда (пример iframe ниже) -->
+        <!-- Получите код в https://yandex.ru/map-constructor/ и замените содержимое src -->
+        <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor:YOUR_MAP_CODE&amp;source=constructor" frameborder="0"></iframe>
+    </div>
+</section>
+
+<section class="message-section">
+    <div class="container">
+        <h3>Написать сообщение</h3>
+        <form asp-controller="Home" asp-action="SendMessage" method="post">
+            <div class="row g-3">
+                <div class="col-md-4"><input name="Name" class="form-control" placeholder="Имя" required /></div>
+                <div class="col-md-4"><input name="Email" type="email" class="form-control" placeholder="Email" required /></div>
+                <div class="col-md-4"><input name="Subject" class="form-control" placeholder="Тема" /></div>
+            </div>
+            <textarea name="Body" class="form-control mt-3" rows="5" placeholder="Сообщение"></textarea>
+            <button class="btn btn-success mt-2" type="submit">Отправить сообщение</button>
+        </form>
+    </div>
+</section>

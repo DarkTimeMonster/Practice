@@ -65,3 +65,11 @@ D:\Practice\obj\Debug\net8.0\refint\DaviskibaMaksim.dll
 D:\Practice\obj\Debug\net8.0\DaviskibaMaksim.pdb
 D:\Practice\obj\Debug\net8.0\DaviskibaMaksim.genruntimeconfig.cache
 D:\Practice\obj\Debug\net8.0\ref\DaviskibaMaksim.dll
+D:\Practice\obj\Debug\net8.0\DaviskibaMaksim.csproj.AssemblyReference.cache
+D:\Practice\bin\Debug\net8.0\DAL.dll
+D:\Practice\bin\Debug\net8.0\Domain.dll
+D:\Practice\bin\Debug\net8.0\Service.dll
+D:\Practice\bin\Debug\net8.0\Domain.pdb
+D:\Practice\bin\Debug\net8.0\Service.pdb
+D:\Practice\bin\Debug\net8.0\DAL.pdb
+D:\Practice\obj\Debug\net8.0\Daviskib.BEB54F1F.Up2Date

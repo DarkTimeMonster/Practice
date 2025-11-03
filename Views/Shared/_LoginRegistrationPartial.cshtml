@@ -1,0 +1,44 @@
+﻿@* Простейшая модалка вход/регистрации *@
+<div class="auth-modal-overlay" aria-hidden="true">
+    <div class="auth-modal" role="dialog" aria-modal="true">
+        <div class="auth-left">
+            <h3>Добро пожаловать</h3>
+            <p>Зарегистрируйтесь, чтобы следить за фестивалями и сохранять избранное.</p>
+            <button class="btn btn-outline-secondary auth-close">Закрыть</button>
+        </div>
+        <div class="auth-right">
+            <button class="btn btn-sm auth-close float-end">✕</button>
+
+            <div class="auth-forms">
+                <!-- login -->
+                <form asp-controller="Home" asp-action="Login" method="post" class="login-form">
+                    <h4>Войти</h4>
+                    <div class="form-group">
+                        <input name="Email" placeholder="Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input name="Password" type="password" placeholder="Пароль" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                    <p class="mt-2">Нет аккаунта? <a href="#" class="to-register">Зарегистрироваться</a></p>
+                </form>
+
+                <!-- register -->
+                <form asp-controller="Home" asp-action="Register" method="post" class="register-form" style="display:none;">
+                    <h4>Регистрация</h4>
+                    <div class="form-group">
+                        <input name="Name" placeholder="Имя" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input name="Email" placeholder="Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input name="Password" type="password" placeholder="Пароль" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+                    <p class="mt-2">Есть аккаунт? <a href="#" class="to-login">Войти</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
