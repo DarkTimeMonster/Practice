@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Контакты — GastroFest";
+}
+
+<section class="main-content">
+    <div class="h-tag">Свяжитесь с нами</div>
+    <h2>Мы будем рады вашим отзывам и предложениям</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div style="background:#e6ffed;border:1px solid #b6f2c6;padding:12px;border-radius:8px;margin-bottom:16px;">
+            @TempData["Success"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div style="background:#ffe6e6;border:1px solid #f2b6b6;padding:12px;border-radius:8px;margin-bottom:16px;">
+            @TempData["Error"]
+        </div>
+    }
+
+    <form asp-action="SendMessage" method="post" style="margin-top: 24px;">
+        <div style="display:flex;flex-direction:column;gap:16px;max-width:500px;">
+            <div>
+                <label for="name" style="font-weight:600;">Ваше имя</label><br />
+                <input id="name" name="Name" type="text" required placeholder="Введите имя"
+                       style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;" />
+            </div>
+
+            <div>
+                <label for="email" style="font-weight:600;">Email</label><br />
+                <input id="email" name="Email" type="email" required placeholder="Введите email"
+                       style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;" />
+            </div>
+
+            <div>
+                <label for="message" style="font-weight:600;">Сообщение</label><br />
+                <textarea id="message" name="Message" rows="5" required placeholder="Ваше сообщение..."
+                          style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;"></textarea>
+            </div>
+
+            <button type="submit"
+                    style="background:var(--accent);color:white;border:none;border-radius:8px;padding:12px;font-size:1rem;cursor:pointer;">
+                Отправить сообщение
+            </button>
+        </div>
+    </form>
+</section>

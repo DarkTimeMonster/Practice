@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+    var title = ViewBag.Title ?? "GastroFest — Каталог гастрономических фестивалей";
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@title</title>
+
+    <!-- базовые стили -->
+    <link rel="stylesheet" href="~/css/shared.css" />
+    <!-- стили модалки, галереи, плавности и мягкого фона -->
+    <link rel="stylesheet" href="~/css/modal_and_gallery.css" />
+
+    <!-- Leaflet (карта без ключей) -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="" />
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="topbar">
+            <div class="container topbar-inner">
+                <div class="logo">
+                    <a href="@Url.Action("Index", "Home")">GastroFest<span class="dot">.</span></a>
+                </div>
+                <div class="auth-buttons">
+                    <a class="btn btn-outline js-open-auth" href="#">Войти</a>
+                    <a class="btn btn-primary btn-shadow js-open-auth" href="#">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="container banner-inner">
+                <div class="banner-text">
+                    <h1>Каталог гастрономических фестивалей</h1>
+                    <p>Найди фестиваль по вкусу — еда, кофе, вино и многое другое.</p>
+                </div>
+                <div class="banner-image" role="img" aria-label="Гастрономический баннер"></div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container navbar-inner">
+                <ul class="main-menu">
+                    <li><a href="@Url.Action("Index", "Home")">Главная</a></li>
+                    <li><a href="@Url.Action("Index", "Home")#about">О нас</a></li>
+                    <li><a href="@Url.Action("Index", "Home")#services">Услуги</a></li>
+                    <li><a href="@Url.Action("Index", "Home")#contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container main-content" role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© @DateTime.Now.Year GastroFest — каталог гастрономических фестивалей</p>
+        </div>
+    </footer>
+
+    @await Html.PartialAsync("_AuthModal")
+
+    <!-- твой общий js -->
+    <script src="~/js/shared_script.js" defer></script>
+    <!-- логика модалки -->
+    <script src="~/js/modal_init.js" defer></script>
+
+    <!-- Leaflet JS + инициализация карты -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""
+            defer>
+    </script>
+    <script src="~/js/map_init.js" defer></script>
+</body>
+</html>

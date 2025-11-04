@@ -1,0 +1,34 @@
+﻿<section id="message" class="main-content">
+    <div class="h-tag">Написать сообщение</div>
+    <h2>Мы будем рады вашим отзывам и предложениям</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="gf-alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="gf-alert-error">@TempData["Error"]</div>
+    }
+
+    <form asp-action="SendMessage" method="post" class="gf-form">
+        @Html.AntiForgeryToken()
+
+        <div class="field">
+            <label for="msg-name">Ваше имя</label>
+            <input id="msg-name" name="Name" type="text" placeholder="Введите имя" required />
+        </div>
+
+        <div class="field">
+            <label for="msg-email">Email</label>
+            <input id="msg-email" name="Email" type="email" placeholder="Введите email" required />
+        </div>
+
+        <div class="field">
+            <label for="msg-text">Сообщение</label>
+            <textarea id="msg-text" name="Message" rows="6" placeholder="Ваше сообщение..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary gf-btn-lg">Отправить сообщение</button>
+    </form>
+</section>
